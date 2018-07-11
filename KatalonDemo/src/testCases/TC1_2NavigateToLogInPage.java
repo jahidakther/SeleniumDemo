@@ -52,7 +52,7 @@ public class TC1_2NavigateToLogInPage extends InitialConfiguration{
 	@Test(priority=1)
 	public void verifyvalidLogInToApplicationPositive() {
 	
-		extent.startTest("TC01.3  verify valid LogIn T oApplication (Positive)", "Login With Valid credential");
+		extent.startTest("TC01.3  verify valid LogIn to Application (Positive)", "Login With Valid credential");
 		driver.findElement(login.userWebTextLocator()).sendKeys(login.getUserId());
 		driver.findElement(login.passwordWebTextLocator()).sendKeys(login.getPassword());
 		driver.findElement(login.loginButtonLocator()).click();		
