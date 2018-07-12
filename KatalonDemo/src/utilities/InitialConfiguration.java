@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import com.relevantcodes.extentreports.DisplayOrder;
@@ -46,7 +47,7 @@ public class InitialConfiguration {
 	
   
     @Parameters(value="browser")
-	@BeforeTest
+	@BeforeSuite
 	public void openBrowser(String browserName )  {
 	    
 	   
