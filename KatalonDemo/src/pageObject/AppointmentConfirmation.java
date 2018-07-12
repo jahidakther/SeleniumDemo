@@ -7,8 +7,10 @@ public class AppointmentConfirmation {
 	
 	public static WebDriver driver;
 	private String actualConfirmationPageLabel="Appointment Confirmation";
+	
 	private String actualFacility="Tokyo CURA Healthcare Center";
 	private By expectedFAcilityLocator = By.id("facility");
+	private By confirmationPageLabelLocator = By.xpath(".//*[@id='summary']/div/div/div[1]/h2");
 	private By expectedVisitdateLocator = By.id("visit_date");
 	
 	
@@ -37,5 +39,11 @@ public class AppointmentConfirmation {
   	public By expectedVisitDateLocator() {
   		return expectedVisitdateLocator;
   	}
+  	
+  //For confirmation Page Label  Locator
+  	public By confirmationPageLabelLocator() {
+  		return confirmationPageLabelLocator;
+  	}
+  	
     
 }

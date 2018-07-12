@@ -10,17 +10,15 @@
       <class name="testCases.TC1_2NavigateToLogInPage"/>
       <class name="testCases.TC1_3VerifyAppointmentPage"/>
       
-      
     </classes>
   </test> 
-   
-  
+    
   <test name="Test2">
    <parameter name="browser" value="IE"/>
      <classes>
       <class name="testCases.TC1_1VerifyHomePage"/>
       <class name="testCases.TC1_2NavigateToLogInPage"/>
-       <class name="testCases.TC1_3VerifyAppointmentPage"/>
+      <class name="testCases.TC1_3VerifyAppointmentPage"/>
      
     </classes>
   </test> <!-- Test -->
@@ -30,7 +28,7 @@
      <classes>
       <class name="testCases.TC1_1VerifyHomePage"/>
       <class name="testCases.TC1_2NavigateToLogInPage"/>
-       <class name="testCases.TC1_3VerifyAppointmentPage"/>
+      <class name="testCases.TC1_3VerifyAppointmentPage"/>
      
     </classes>
   </test> <!-- Test -->
