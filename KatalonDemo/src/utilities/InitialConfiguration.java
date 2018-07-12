@@ -26,13 +26,13 @@ public class InitialConfiguration {
 	public static  WebDriver driver = null;
 	public static final ExtentReports extent = ExtentReports.get(InitialConfiguration.class);
 	public static String timeStamp=new SimpleDateFormat("mmddyyyy").format(Calendar.getInstance().getTime());
-	public static final String reportLocation = "C:\\Users\\tuba\\Desktop\\DemoJavaSelenium\\KatalonDemo\\report\\";
+	public static final String reportLocation = "report/";
 	public static String imageLocation = "images/";
 	HomePage home=new HomePage(driver);
 	
 	
 	public void startReport(){
-		extent.init(reportLocation + "ExtentReport.html", true,
+		extent.init(reportLocation + "Selenium.html", true,
 				DisplayOrder.BY_OLDEST_TO_LATEST, GridType.STANDARD);
 		extent.config().documentTitle("Test report in Browser");
 		extent.config()
@@ -51,41 +51,40 @@ public class InitialConfiguration {
 	    
 	   
 	   if(browserName.equalsIgnoreCase("firefox")){
-		   System.setProperty("webdriver.gecko.driver", "C:\\Users\\tuba\\Desktop\\DemoJavaSelenium\\geckodriver\\geckodriver.exe");
+		    System.setProperty("webdriver.gecko.driver", "geckodriver/geckodriver.exe");
 			driver=new FirefoxDriver();
 		}else if(browserName.equalsIgnoreCase("IE")){
-			System.setProperty("webdriver.ie.driver", "C:\\Users\\tuba\\Desktop\\DemoJavaSelenium\\IEDriver\\IEDriverServer.exe");
+			System.setProperty("webdriver.ie.driver", "IEDriver/IEDriverServer.exe");
 			// DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();  
 		      //  ieCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-		        driver = new InternetExplorerDriver();
+		    driver = new InternetExplorerDriver();
 			
 		}else if(browserName.equalsIgnoreCase("Chrome")){
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\tuba\\Desktop\\DemoJavaSelenium\\chromedriver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "chromedriver/chromedriver.exe");
 			driver = new ChromeDriver();
 		}
 	 			
-		//driver=new FirefoxDriver();
-	   extent.init(reportLocation + "Selenium.html", true,
+	    extent.init(reportLocation + "Selenium.html", true,
 				DisplayOrder.BY_OLDEST_TO_LATEST, GridType.STANDARD);
 		extent.config().documentTitle("Test report in "+browserName+" Browser");
 		extent.config()
 				.reportTitle(
-						"<h1><font color='#000099'>Automation Test Result in  browser</font></h1> <h4>1.Verify LogIn Screen(Positive,Negetive)</h4><h4>\n2.Member Account(Positive,Negetive).</h4><h4>\n2.Individual Provider Account(Positive,Negetive).</h4>");
+						"<h1><font color='#000099'>Automation Test Result in  browser</font></h1> <h4>1.Verify Home Page</h4><h4>\n2.Verify LogIn (Positive,Negetive).</h4><h4>\n2.Verify Appoinment Page (Positive,Negetive).</h4>");
 		extent.config()
 				.reportHeadline(
 						"<b>Selenium Automation Test Report.Develop By:JAHED AKTHER</b>");
-	//	extent.startTest("TC01.1", "Open The "+ browserName+" Browser");
+	
 		
 		extent.startTest("TC01.1", "Open The Browser");
-		
-		
+		extent.log(LogStatus.PASS, "Opening  Application",
+				"View details below:",
+				ScreenShot.captureScreen(driver, "Open Aplication "+timeStamp));
+	
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
 		driver.navigate().to(home.getURL());
 		driver.manage().window().maximize();
-		extent.log(LogStatus.PASS, "Opening  Application",
-				"View details below:",
-				ScreenShot.captureScreen(driver, "Open Aplication "+timeStamp));
+		
 		extent.endTest();
 		
 	}

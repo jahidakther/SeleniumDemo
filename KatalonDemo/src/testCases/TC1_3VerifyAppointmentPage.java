@@ -25,17 +25,24 @@ public class TC1_3VerifyAppointmentPage extends InitialConfiguration{
 			
 			    driver.findElement(home.getBurgerMenuLocator()).click();
 		        driver.findElement(home.getloginLocator()).click();
-		
-			        extent.startTest("TC01.3  Navigate to Appointment Page", "Appointment Page");
+		        extent.startTest("TC01.3  Navigate to Appointment Page", "Appointment Page");
 			       
 		
 			try {
 				
-			    extent.log(LogStatus.PASS, "Navigate to Appointment Page",
-						"View details below:",
-						ScreenShot.captureScreen(driver, "Appointment Page "+timeStamp));
+				if(driver.findElement(appPage.appointmentPageLabelLocator()).isDisplayed()==true) {
+					extent.log(LogStatus.PASS, "Navigate to Appointment Page successfully",
+							"View details below:",
+							ScreenShot.captureScreen(driver, "Appointment Page "+timeStamp));
+									}else {
+										extent.log(LogStatus.FAIL, "Fail to Navigate Appointment Page",
+												"View details below:",
+												ScreenShot.captureScreen(driver, "Appointment Page "+timeStamp));
+									}
+				
+			   
 			}catch(Exception e) {
-								extent.log(LogStatus.FAIL, "Fail to Navigate Appointment Page",
+						extent.log(LogStatus.FAIL, "Fail to Navigate Appointment Page",
 						"View details below:",
 						ScreenShot.captureScreen(driver, "Appointment Page "+timeStamp));
 		

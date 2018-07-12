@@ -8,6 +8,8 @@
       <classes>
       <class name="testCases.TC1_1VerifyHomePage"/>
       <class name="testCases.TC1_2NavigateToLogInPage"/>
+      <class name="testCases.TC1_3VerifyAppointmentPage"/>
+      
       
     </classes>
   </test> 
@@ -18,6 +20,17 @@
      <classes>
       <class name="testCases.TC1_1VerifyHomePage"/>
       <class name="testCases.TC1_2NavigateToLogInPage"/>
+       <class name="testCases.TC1_3VerifyAppointmentPage"/>
+     
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Test3">
+   <parameter name="browser" value="firefox"/>
+     <classes>
+      <class name="testCases.TC1_1VerifyHomePage"/>
+      <class name="testCases.TC1_2NavigateToLogInPage"/>
+       <class name="testCases.TC1_3VerifyAppointmentPage"/>
      
     </classes>
   </test> <!-- Test -->

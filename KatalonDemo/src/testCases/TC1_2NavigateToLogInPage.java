@@ -1,6 +1,7 @@
 package testCases;
 
 
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -50,6 +51,46 @@ public class TC1_2NavigateToLogInPage extends InitialConfiguration{
 	}
 	
 	@Test(priority=1)
+	public void verifyInvalidLogInToApplicationNegetive() {
+	
+		extent.startTest("TC01.3  verify valid LogIn T oApplication (Negetive)", "Login With InValid credential");
+	    driver.findElement(home.getBurgerMenuLocator()).click();
+	    driver.findElement(home.getloginLocator()).click();
+		driver.findElement(login.userWebTextLocator()).sendKeys(login.getUserId());
+		driver.findElement(login.passwordWebTextLocator()).sendKeys("");
+		driver.findElement(login.loginButtonLocator()).click();		
+		WebElement errorMsg=driver.findElement(login.errorMsgLocator());
+        
+
+		try {
+			
+			if(errorMsg.isDisplayed()==true) {
+				 extent.log(LogStatus.PASS, "verify valid LogIn into Application (Positive)\"",
+							"View details below:",
+							ScreenShot.captureScreen(driver, "valid login "+timeStamp));
+				
+			}else {
+				extent.log(LogStatus.FAIL, "verify valid LogIn into Application (Positive)\"",
+						"View details below:",
+						ScreenShot.captureScreen(driver, "valid login "+timeStamp));
+			}
+	
+		   
+		}catch(Exception e) {
+			
+			extent.log(LogStatus.FAIL, "Login with Invalid Credential",
+					"View details below:",
+					ScreenShot.captureScreen(driver, "Login Page "+timeStamp));
+	
+		}
+		extent.endTest();
+		
+		
+		
+	}
+
+	
+	@Test(priority=2)
 	public void verifyvalidLogInToApplicationPositive() {
 	
 		extent.startTest("TC01.3  verify valid LogIn to Application (Positive)", "Login With Valid credential");
@@ -84,41 +125,6 @@ public class TC1_2NavigateToLogInPage extends InitialConfiguration{
 	}
 	
 	
-	@Test(priority=2)
-	public void verifyInvalidLogInToApplicationNegetive() {
 	
-		extent.startTest("TC01.3  verify valid LogIn T oApplication (Negetive)", "Login With InValid credential");
-	    driver.findElement(home.getBurgerMenuLocator()).click();
-	    driver.findElement(home.getloginLocator()).click();
-		driver.findElement(login.userWebTextLocator()).sendKeys(login.getUserId());
-		driver.findElement(login.passwordWebTextLocator()).sendKeys("");
-		driver.findElement(login.loginButtonLocator()).click();		
-		String errorMsg=driver.findElement(login.errorMsgLocator()).getText();
-        
-
-		
-		try {
-			
-			if(errorMsg.isEmpty()==false) {
-				 extent.log(LogStatus.PASS, "verify valid LogIn into Application (Positive)\"",
-							"View details below:",
-							ScreenShot.captureScreen(driver, "valid login "+timeStamp));
-				
-			}
-	
-		   
-		}catch(Exception e) {
-			
-			extent.log(LogStatus.FAIL, "Login with Invalid Credential",
-					"View details below:",
-					ScreenShot.captureScreen(driver, "Login Page "+timeStamp));
-	
-		}
-		extent.endTest();
-		
-		
-		
-	}
-
 
 }
