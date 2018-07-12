@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -47,22 +48,23 @@ public class InitialConfiguration {
 	
   
     @Parameters(value="browser")
-	@BeforeSuite
+	@BeforeTest
 	public void openBrowser(String browserName )  {
 	    
 	   
-	   if(browserName.equalsIgnoreCase("firefox")){
-		    System.setProperty("webdriver.gecko.driver", "geckodriver/geckodriver.exe");
-			driver=new FirefoxDriver();
+	   if(browserName.equalsIgnoreCase("Chrome")){
+			System.setProperty("webdriver.chrome.driver", "chromedriver/chromedriver.exe");
+			driver = new ChromeDriver();
+	   
 		}else if(browserName.equalsIgnoreCase("IE")){
 			System.setProperty("webdriver.ie.driver", "IEDriver/IEDriverServer.exe");
 			// DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();  
 		      //  ieCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 		    driver = new InternetExplorerDriver();
 			
-		}else if(browserName.equalsIgnoreCase("Chrome")){
-			System.setProperty("webdriver.chrome.driver", "chromedriver/chromedriver.exe");
-			driver = new ChromeDriver();
+		}else if(browserName.equalsIgnoreCase("firefox")){
+		    System.setProperty("webdriver.gecko.driver", "geckodriver/geckodriver.exe");
+			driver=new FirefoxDriver();
 		}
 	 			
 	    extent.init(reportLocation + "Selenium.html", true,
