@@ -26,15 +26,14 @@ public class TC1_2NavigateToLogInPage extends InitialConfiguration{
 	public void verifyPageLabel() {
 	
 		extent.startTest("TC01.2  Navigate to Login Page", "Login  Page");
-		        driver.findElement(home.getBurgerMenuLocator()).click();
-		        driver.findElement(home.getloginLocator()).click();
-				String pageLabel=driver.findElement(login.getPageLabelLocator()).getText();
-	            String expectedLabel=login.actualPageLabel();
+		driver.findElement(home.getBurgerMenuLocator()).click();
+		driver.findElement(home.getloginLocator()).click();
+		String pageLabel=driver.findElement(login.getPageLabelLocator()).getText();
+	    String expectedLabel=login.actualPageLabel();
 	
 		try {
 			Assert.assertEquals(pageLabel,expectedLabel );
 		    System.out.println("pass");
-	
 		    extent.log(LogStatus.PASS, "Navigate to Login Page",
 					"View details below:",
 					ScreenShot.captureScreen(driver, "Login Page "+timeStamp));
@@ -44,16 +43,16 @@ public class TC1_2NavigateToLogInPage extends InitialConfiguration{
 			extent.log(LogStatus.FAIL, "Fail to Navigate Login Page",
 					"View details below:",
 					ScreenShot.captureScreen(driver, "Login Page "+timeStamp));
-	
-		}
+			}
 		extent.endTest();
-		
-	}
+		}
 	
 	@Test(priority=1)
 	public void verifyInvalidLogInToApplicationNegetive() {
 	
 		extent.startTest("TC01.3  verify valid LogIn into Application (Negetive)", "Login With Invalid credential");
+		driver.findElement(home.getBurgerMenuLocator()).click();
+		driver.findElement(home.getloginLocator()).click();
 	    driver.findElement(login.userWebTextLocator()).sendKeys(login.getUserId());
 		driver.findElement(login.passwordWebTextLocator()).sendKeys("");
 		driver.findElement(login.loginButtonLocator()).click();		
@@ -82,9 +81,7 @@ public class TC1_2NavigateToLogInPage extends InitialConfiguration{
 	
 		}
 		extent.endTest();
-		
-		
-		
+			
 	}
 
 	
@@ -93,8 +90,9 @@ public class TC1_2NavigateToLogInPage extends InitialConfiguration{
 	public void verifyInvalidLogInToApplicationNegetiveWithBlankData() {
 	
 		extent.startTest("TC01.4 verify valid LogIn to Application (Negetive blank data)", "Login With InValid credential");
-	    
-		driver.findElement(login.userWebTextLocator()).sendKeys("");
+		driver.findElement(home.getBurgerMenuLocator()).click();
+		driver.findElement(home.getloginLocator()).click();
+	   	driver.findElement(login.userWebTextLocator()).sendKeys("");
 		driver.findElement(login.passwordWebTextLocator()).sendKeys("");
 		driver.findElement(login.loginButtonLocator()).click();		
 		WebElement errorMsg=driver.findElement(login.errorMsgLocator());
@@ -106,25 +104,20 @@ public class TC1_2NavigateToLogInPage extends InitialConfiguration{
 				 extent.log(LogStatus.PASS, "verify valid LogIn into Application (Positive)\"",
 							"View details below:",
 							ScreenShot.captureScreen(driver, "valid login "+timeStamp));
-				
-			}else {
+				}
+			else {
 				extent.log(LogStatus.FAIL, "verify valid LogIn into Application (Positive)\"",
 						"View details below:",
 						ScreenShot.captureScreen(driver, "valid login "+timeStamp));
 			}
-	
-		   
+			   
 		}catch(Exception e) {
 			
 			extent.log(LogStatus.FAIL, "Login with Invalid Credential",
 					"View details below:",
 					ScreenShot.captureScreen(driver, "Login Page "+timeStamp));
-	
-		}
+			}
 		extent.endTest();
-		
-		
-		
 	}
 
 
@@ -158,11 +151,6 @@ public class TC1_2NavigateToLogInPage extends InitialConfiguration{
 		}
 		extent.endTest();
 		
-		
-		
 	}
-	
-	
-	
 
 }

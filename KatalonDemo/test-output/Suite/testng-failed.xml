@@ -1,27 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test thread-count="5" name="Test1(failed)">
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="testCases.TC1_2NavigateToLogInPage">
-        <methods>
-          <include name="tearDown"/>
-          <include name="verifyvalidLogInToApplicationPositive"/>
-          <include name="openBrowser"/>
-        </methods>
-      </class> <!-- testCases.TC1_2NavigateToLogInPage -->
-    </classes>
-  </test> <!-- Test1(failed) -->
   <test thread-count="5" name="Test2(failed)">
     <parameter name="browser" value="IE"/>
     <classes>
       <class name="testCases.TC1_2NavigateToLogInPage">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyvalidLogInToApplicationPositive"/>
           <include name="openBrowser"/>
-          <include name="verifyInvalidLogInToApplicationNegetive"/>
           <include name="verifyPageLabel"/>
         </methods>
       </class> <!-- testCases.TC1_2NavigateToLogInPage -->
@@ -41,4 +27,30 @@
       </class> <!-- testCases.TC1_3VerifyAppointmentPage -->
     </classes>
   </test> <!-- Test2(failed) -->
+  <test thread-count="5" name="Test3(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="testCases.TC1_2NavigateToLogInPage">
+        <methods>
+          <include name="tearDown"/>
+          <include name="openBrowser"/>
+          <include name="verifyPageLabel"/>
+        </methods>
+      </class> <!-- testCases.TC1_2NavigateToLogInPage -->
+      <class name="testCases.TC1_1VerifyHomePage">
+        <methods>
+          <include name="verifyTitle"/>
+          <include name="tearDown"/>
+          <include name="openBrowser"/>
+        </methods>
+      </class> <!-- testCases.TC1_1VerifyHomePage -->
+      <class name="testCases.TC1_3VerifyAppointmentPage">
+        <methods>
+          <include name="verifyPageLabel"/>
+          <include name="tearDown"/>
+          <include name="openBrowser"/>
+        </methods>
+      </class> <!-- testCases.TC1_3VerifyAppointmentPage -->
+    </classes>
+  </test> <!-- Test3(failed) -->
 </suite> <!-- Failed suite [Suite] -->
