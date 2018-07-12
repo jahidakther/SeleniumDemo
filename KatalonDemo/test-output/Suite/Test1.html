@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test1</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jul 10 10:49:37 EDT 2018</td>
+<td>Started on:</td><td>Wed Jul 11 20:55:28 EDT 2018</td>
 </tr>
-<tr><td>Total time:</td><td>52 seconds (52724 ms)</td>
+<tr><td>Total time:</td><td>39 seconds (39490 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,17 +76,11 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='testCases.TC1_2NavigateToLogInPage.verifyvalidLogInToApplicationPositive()'><b>verifyvalidLogInToApplicationPositive</b><br>Test class: testCases.TC1_2NavigateToLogInPage</td>
-<td><div><pre>java.lang.AssertionError: expected [Make Appointment] but found [Login]
-	at testCases.TC1_2NavigateToLogInPage.verifyvalidLogInToApplicationPositive(TC1_2NavigateToLogInPage.java:64)
-... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace934740803", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace934740803'><pre>java.lang.AssertionError: expected [Make Appointment] but found [Login]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:453)
-	at org.testng.Assert.assertEquals(Assert.java:463)
-	at testCases.TC1_2NavigateToLogInPage.verifyvalidLogInToApplicationPositive(TC1_2NavigateToLogInPage.java:64)
+<td><div><pre>java.lang.NullPointerException
+	at testCases.TC1_2NavigateToLogInPage.verifyvalidLogInToApplicationPositive(TC1_2NavigateToLogInPage.java:100)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace990870941", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace990870941'><pre>java.lang.NullPointerException
+	at testCases.TC1_2NavigateToLogInPage.verifyvalidLogInToApplicationPositive(TC1_2NavigateToLogInPage.java:100)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -113,8 +107,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>17</td>
-<td>testCases.TC1_2NavigateToLogInPage@37d31475</td></tr>
+<td>24</td>
+<td>testCases.TC1_2NavigateToLogInPage@27808f31</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -126,18 +120,23 @@ function toggleAllBoxes() {
 <tr>
 <td title='testCases.TC1_2NavigateToLogInPage.verifyInvalidLogInToApplicationNegetive()'><b>verifyInvalidLogInToApplicationNegetive</b><br>Test class: testCases.TC1_2NavigateToLogInPage</td>
 <td></td>
-<td>2</td>
-<td>testCases.TC1_2NavigateToLogInPage@37d31475</td></tr>
+<td>1</td>
+<td>testCases.TC1_2NavigateToLogInPage@27808f31</td></tr>
 <tr>
 <td title='testCases.TC1_2NavigateToLogInPage.verifyPageLabel()'><b>verifyPageLabel</b><br>Test class: testCases.TC1_2NavigateToLogInPage</td>
 <td></td>
 <td>1</td>
-<td>testCases.TC1_2NavigateToLogInPage@37d31475</td></tr>
+<td>testCases.TC1_2NavigateToLogInPage@27808f31</td></tr>
+<tr>
+<td title='testCases.TC1_3VerifyAppointmentPage.verifyPageLabel()'><b>verifyPageLabel</b><br>Test class: testCases.TC1_3VerifyAppointmentPage</td>
+<td></td>
+<td>0</td>
+<td>testCases.TC1_3VerifyAppointmentPage@436e852b</td></tr>
 <tr>
 <td title='testCases.TC1_1VerifyHomePage.verifyTitle()'><b>verifyTitle</b><br>Test class: testCases.TC1_1VerifyHomePage</td>
 <td></td>
 <td>1</td>
-<td>testCases.TC1_1VerifyHomePage@1a1d6a08</td></tr>
+<td>testCases.TC1_1VerifyHomePage@37d31475</td></tr>
 </table><p>
 </body>
 </html>

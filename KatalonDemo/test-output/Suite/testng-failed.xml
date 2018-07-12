@@ -32,6 +32,13 @@
           <include name="openBrowser"/>
         </methods>
       </class> <!-- testCases.TC1_1VerifyHomePage -->
+      <class name="testCases.TC1_3VerifyAppointmentPage">
+        <methods>
+          <include name="verifyPageLabel"/>
+          <include name="tearDown"/>
+          <include name="openBrowser"/>
+        </methods>
+      </class> <!-- testCases.TC1_3VerifyAppointmentPage -->
     </classes>
   </test> <!-- Test2(failed) -->
 </suite> <!-- Failed suite [Suite] -->
