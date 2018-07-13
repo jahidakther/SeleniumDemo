@@ -75,7 +75,7 @@ public class TC1_3VerifyAppointmentPage extends InitialConfiguration{
 			
 			  extent.startTest("TC01.3.3  Make Appointment With Past Date", "Appointment Page");
 			  helpingMethod.selectValueFromComboBox("Hongkong CURA Healthcare Center");
-			  driver.findElement(appPage.VisitDateLocator()).sendKeys("12/12/2017");
+			  driver.findElement(appPage.VisitDateLocator()).sendKeys(appPage.getinvalidDate());
 			  driver.findElement(appPage.bookAppointButtonLocator()).click();
 				try {
 					if(driver.findElement(appCon.confirmationPageLabelLocator()).isDisplayed()==false) {
@@ -97,5 +97,33 @@ public class TC1_3VerifyAppointmentPage extends InitialConfiguration{
 				}
 			
 			
-		
+
+		@Test(priority=3)
+		public void makeAppointmentWithValidDate() {
+			
+			  extent.startTest("TC01.3.3  Make Appointment With Past Date", "Appointment Page");
+			  helpingMethod.selectValueFromComboBox("Hongkong CURA Healthcare Center");
+			  driver.findElement(appPage.VisitDateLocator()).sendKeys(appPage.getvalidDate());
+			  driver.findElement(appPage.bookAppointButtonLocator()).click();
+				try {
+					if(driver.findElement(appCon.confirmationPageLabelLocator()).isDisplayed()==true) {
+						extent.log(LogStatus.PASS, "Try to Make appointment without date ",
+								"View details below:",
+								ScreenShot.captureScreen(driver, "Appointment Page "+timeStamp));
+					}else {
+						extent.log(LogStatus.FAIL, "Try to Make appointment without date",
+													"View details below:",
+													ScreenShot.captureScreen(driver, "Appointment Page "+timeStamp));
+										}
+					   
+				}catch(Exception e) {
+							extent.log(LogStatus.FAIL, "Try to Make appointment with Past date",
+							"View details below:",
+							ScreenShot.captureScreen(driver, "Appointment Page "+timeStamp));
+					}
+				extent.endTest();
+				}
+			
+			
+
 }
