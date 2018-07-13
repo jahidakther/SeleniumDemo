@@ -25,7 +25,7 @@ public class TC1_2NavigateToLogInPage extends InitialConfiguration{
 	@Test(priority=0)
 	public void verifyPageLabel() {
 	
-		extent.startTest("TC01.2  Navigate to Login Page", "Login  Page");
+		extent.startTest("TC01.2.1  Navigate to Login Page", "Login  Page");
 		driver.findElement(home.getBurgerMenuLocator()).click();
 		driver.findElement(home.getloginLocator()).click();
 		String pageLabel=driver.findElement(login.getPageLabelLocator()).getText();
@@ -49,7 +49,7 @@ public class TC1_2NavigateToLogInPage extends InitialConfiguration{
 	@Test(priority=1)
 	public void verifyInvalidLogInToApplicationNegetive() {
 	
-		extent.startTest("TC01.3  verify valid LogIn into Application (Negetive)", "Login With Invalid credential");
+		extent.startTest("TC01.2.2  verify valid LogIn into Application (Negetive)", "Login With Invalid credential");
 		//driver.findElement(home.getBurgerMenuLocator()).click();
 		//driver.findElement(home.getloginLocator()).click();
 	    driver.findElement(login.userWebTextLocator()).sendKeys(login.getUserId());
@@ -88,7 +88,7 @@ public class TC1_2NavigateToLogInPage extends InitialConfiguration{
 	@Test(priority=2)
 	public void verifyInvalidLogInToApplicationNegetiveWithBlankData() {
 	
-		extent.startTest("TC01.4 verify valid LogIn to Application (Negetive blank data)", "Login With InValid credential");
+		extent.startTest("TC01.2.3 verify valid LogIn to Application (Negetive blank data)", "Login With InValid credential");
 		///driver.findElement(home.getBurgerMenuLocator()).click();
 		//driver.findElement(home.getloginLocator()).click();
 	   	driver.findElement(login.userWebTextLocator()).sendKeys("");
@@ -125,7 +125,7 @@ public class TC1_2NavigateToLogInPage extends InitialConfiguration{
 	@Test(priority=3)
 	public void verifyvalidLogInToApplicationPositive() {
 	
-		extent.startTest("TC01.5  verify valid LogIn to Application (Positive)", "Login With Valid credential");
+		extent.startTest("TC01.2.4  verify valid LogIn to Application (Positive)", "Login With Valid credential");
 		driver.findElement(login.userWebTextLocator()).sendKeys(login.getUserId());
 		driver.findElement(login.passwordWebTextLocator()).sendKeys(login.getPassword());
 		driver.findElement(login.loginButtonLocator()).click();		

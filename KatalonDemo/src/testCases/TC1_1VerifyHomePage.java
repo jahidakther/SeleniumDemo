@@ -14,7 +14,7 @@ public class TC1_1VerifyHomePage extends InitialConfiguration{
 	@Test(priority=0)
 	public void verifyTitle() {
 		
-		extent.startTest("TC01.1 Successfully Landed Home Page", "Home Page");
+		extent.startTest("TC01.1.1 Successfully Landed Home Page", "Home Page");
 				String title=driver.getTitle();
 	            String expectedTitle=home.getTitle();
 	
